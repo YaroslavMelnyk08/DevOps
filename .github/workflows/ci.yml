@@ -1,0 +1,13 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Встановлення Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Запуск тестів
+        run: pytest
