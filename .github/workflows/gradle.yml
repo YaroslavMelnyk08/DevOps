@@ -1,0 +1,15 @@
+name: Java CI with Gradle
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Встановлення JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+      - name: Збірка Gradle
+        run: ./gradlew build
